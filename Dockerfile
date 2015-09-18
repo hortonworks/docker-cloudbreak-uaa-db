@@ -1,6 +1,6 @@
 FROM postgres:9.4.1
 
-ENV DBNAME pcdb
+ENV DBNAME uaadb
 ENV VERSION 1.0.0
 ENV BACKUP_TGZ /initdb/$DBNAME-$VERSION.tgz
 
