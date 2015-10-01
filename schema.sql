@@ -338,6 +338,22 @@ CREATE INDEX schema_version_vr_idx ON schema_version USING btree (version_rank);
 -- Name: unique_uk_1_1; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
+--
+-- Data for Name: schema_version; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY schema_version (version_rank, installed_rank, version, description, type, script, checksum, installed_by, installed_on, execution_time, success) FROM stdin;
+1	1	1.5.2	initial db	SQL	V1_5_2__initial_db.sql	-642457668	postgres	2015-09-30 13:08:31.325582	168	t
+2	2	1.5.3	InitialDBScript	JDBC	org.cloudfoundry.identity.uaa.db.postgresql.V1_5_3__InitialDBScript	\N	postgres	2015-09-30 13:08:31.603508	32	t
+3	3	1.5.4	NormalizeTableAndColumnNames	SPRING_JDBC	org.cloudfoundry.identity.uaa.db.postgresql.V1_5_4__NormalizeTableAndColumnNames	\N	postgres	2015-09-30 13:08:31.655631	37	t
+4	4	1.5.5	CreateExpiringCodeStore	SQL	V1_5_5__CreateExpiringCodeStore.sql	284135900	postgres	2015-09-30 13:08:31.718391	8	t
+5	5	1.6.0	ExtendAuthzApprovalUsername	SQL	V1_6_0__ExtendAuthzApprovalUsername.sql	-2020909403	postgres	2015-09-30 13:08:31.737077	12	t
+6	6	1.7.0	OriginAndExternalIDColumns	SQL	V1_7_0__OriginAndExternalIDColumns.sql	201133337	postgres	2015-09-30 13:08:31.761077	25	t
+7	7	1.7.1	OriginForGroupMembershipColumns	SQL	V1_7_1__OriginForGroupMembershipColumns.sql	-1044457386	postgres	2015-09-30 13:08:31.795655	6	t
+8	8	1.7.3	ExtendClientAuthorities	SQL	V1_7_3__ExtendClientAuthorities.sql	-73833988	postgres	2015-09-30 13:08:31.812906	5	t
+\.
+
+
 CREATE UNIQUE INDEX unique_uk_1_1 ON users USING btree (lower((username)::text));
 
 
