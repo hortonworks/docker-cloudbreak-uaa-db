@@ -1,11 +1,6 @@
-FROM postgres:9.4.1
+FROM postgres:9.4.4
 
 ENV DBNAME uaadb
 ENV VERSION 1.0.1
-ENV BACKUP_TGZ /initdb/$DBNAME-$VERSION.tgz
 
-ADD https://github.com/sequenceiq/docker-${DBNAME}/releases/download/v${VERSION}/${DBNAME}-${VERSION}.tgz $BACKUP_TGZ
-ADD /start /
-
-ENTRYPOINT [ "/start" ]
-CMD ["postgres"]
+Add ./initial-nouser.sql /docker-entrypoint-initdb.d/
