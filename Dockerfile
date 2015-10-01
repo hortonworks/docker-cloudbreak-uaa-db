@@ -1,7 +1,7 @@
 FROM postgres:9.4.1
 
 ENV DBNAME uaadb
-ENV VERSION 1.0.0
+ENV VERSION 1.0.1
 ENV BACKUP_TGZ /initdb/$DBNAME-$VERSION.tgz
 
 ADD https://github.com/sequenceiq/docker-${DBNAME}/releases/download/v${VERSION}/${DBNAME}-${VERSION}.tgz $BACKUP_TGZ
