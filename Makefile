@@ -1,4 +1,4 @@
-IMAGE = hortonworks/cloudbreak-server-uaadb
+IMAGE = hortonworks/cloudbreak-uaa-db
 TAG = $(shell git  describe --tags --abbrev=0)
 UNAME = $(shell uname)
 
