@@ -1,4 +1,5 @@
 FROM postgres:9.4.4
+MAINTAINER Hortonworks
 
 ENV REPONAME cloudbreak-uaadb
 ENV DBNAME uaadb
