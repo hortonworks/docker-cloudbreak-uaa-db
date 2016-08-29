@@ -3,3 +3,5 @@
 Profile
 *.yml
 release
+certs
+db_migration.log

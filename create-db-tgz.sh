@@ -18,10 +18,10 @@ start_db(){
   echo "export DOCKER_TAG_${APP_NAME}=${ver}" >> Profile
 
   $(cbd env export | grep POSTGRES)
-
-  docker run -d --name cbreak_${DBNAME}_1 postgres:${DOCKER_TAG_POSTGRES}
+  cbd generate
   cbd migrate ${DBNAME} up
-  if cbd migrate ${DBNAME} status|grep "MyBatis Migrations SUCCESS" ; then
+  cbd migrate ${DBNAME} pending
+  if cbd migrate ${DBNAME} status 2>&1|grep "Migration SUCCESS" ; then
       echo Migration: OK
   else
       echo Migration: ERROR
@@ -47,7 +47,7 @@ clean() {
 
 release() {
     declare ver=${1:? version required}
-    gh-release create sequenceiq/docker-${DBNAME} "${ver}"
+    gh-release create hortonworks/docker-cloudbreak-uaa-db "${ver}"
 }
 
 update_dockerfile() {
