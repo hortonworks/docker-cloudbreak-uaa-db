@@ -10,7 +10,7 @@ main() {
         echo "[INFO] previous DB found, leave it ..."
     fi
 
-    /docker-entrypoint.sh "$@"
+    exec /docker-entrypoint.sh "$@"
 }
 
 [[ "$0" == "$BASH_SOURCE" ]] && main "$@"
