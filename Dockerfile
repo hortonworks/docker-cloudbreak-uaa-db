@@ -3,7 +3,7 @@ MAINTAINER Hortonworks
 
 ENV REPONAME cloudbreak-uaa-db
 ENV DBNAME uaadb
-ENV VERSION 1.10.0-rc.6
+ENV VERSION 1.10.0-rc.12
 
 ENV BACKUP_TGZ /initdb/$DBNAME-$VERSION.tgz
 
